@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCrudDto } from './dto/create-crud.dto';
 import { UpdateCrudDto } from './dto/update-crud.dto';
-<<<<<<< HEAD
 import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
@@ -37,28 +36,5 @@ export class CrudService {
   async remove(id: number) {
     const remove = await this.prisma.products.delete({where:{id}})
     return remove;
-=======
-
-@Injectable()
-export class CrudService {
-  create(createCrudDto: CreateCrudDto) {
-    return 'This action adds a new crud';
-  }
-
-  findAll() {
-    return `This action returns all crud`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} crud`;
-  }
-
-  update(id: number, updateCrudDto: UpdateCrudDto) {
-    return `This action updates a #${id} crud`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} crud`;
->>>>>>> 9a79e73871fb93909f3fc9996de3e876d53a4acf
   }
 }
