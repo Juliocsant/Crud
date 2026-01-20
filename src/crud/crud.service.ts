@@ -27,7 +27,9 @@ export class CrudService {
   }
 
   async update(id: number, updateCrudDto: UpdateCrudDto) {
-    const update = await this.prisma.products.update({where:{id},data:{...updateCrudDto}})
+    const update = await this.prisma.products.update({where:{id},
+      data:{...updateCrudDto}
+    })
     return update;
   }
 
